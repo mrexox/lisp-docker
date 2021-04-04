@@ -6,6 +6,12 @@ CLISP_VERSION = $(CLISP)-r3
 
 build: sbcl clisp
 
+push:
+	docker push mrexox/sbcl:$(SBCL)
+	docker push mrexox/sbcl:$(SBCL)-alpine
+	docker push mrexox/clisp:$(CLISP)
+	docker push mrexox/clisp:$(CLISP)-alpine
+
 sbcl:
 	docker build \
 	--build-arg "SBCL_VERSION=$(SBCL_VERSION)" \
