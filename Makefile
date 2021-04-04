@@ -9,7 +9,7 @@ build: sbcl clisp
 sbcl:
 	docker build \
 	--build-arg "SBCL_VERSION=$(SBCL_VERSION)" \
-	--file sbcl.dockerfile \
+	--file dockerfiles/sbcl.dockerfile \
 	--tag mrexox/sbcl:$(SBCL) \
 	--tag mrexox/sbcl:$(SBCL)-alpine \
 	.
@@ -17,7 +17,7 @@ sbcl:
 clisp:
 	docker build \
 	--build-arg "CLISP_VERSION=$(CLISP_VERSION)" \
-	--file clisp.dockerfile \
+	--file dockerfiles/clisp.dockerfile \
 	--tag mrexox/clisp:$(CLISP) \
 	--tag mrexox/clisp:$(CLISP)-alpine \
 	.
